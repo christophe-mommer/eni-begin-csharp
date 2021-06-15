@@ -1,0 +1,22 @@
+@page "/horloge"
+
+<h1>Bonjour !</h1>
+<p>Il est @Date</p>
+
+@code {
+    private DateTime Date { get; set; } = DateTime.Now;
+
+    protected override void OnInitialized()
+    {
+        Task.Run(async () =>
+        {
+            while (true)
+            {
+                await InvokeAsync(() => Date = DateTime.Now);
+                StateHasChanged();
+                await Task.Delay(1000);
+            }
+        });
+    }
+
+}
