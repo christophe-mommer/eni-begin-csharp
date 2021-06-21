@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="DesktopUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DesktopUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Content="Cliquer ici" Height="30" Width="120" 
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Click="Button_Click"/>
+        <TextBlock x:Name="label1"
+               Grid.Column="1" Text="" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Page>
