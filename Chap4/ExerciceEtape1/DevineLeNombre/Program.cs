@@ -1,4 +1,4 @@
-﻿Console.WriteLine("Saisir la borne maximum du chiffre à deviner");
+﻿Console.WriteLine("Saisissez la borne maximum du chiffre à deviner");
 var borneMaximum = int.Parse(Console.ReadLine());
 if (borneMaximum <= 0)
 {
