@@ -6,8 +6,7 @@ if (borneMaximum <= 0)
 }
 else
 {
-    var random = new Random();
-    var nombre = random.Next(0, borneMaximum + 1);
+    var nombre = Random.Shared.Next(0, borneMaximum + 1);
     Console.WriteLine("Tentez de deviner le nombre caché");
 
     var devine = int.Parse(Console.ReadLine());
