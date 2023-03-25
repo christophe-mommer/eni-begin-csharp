@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-int borneMaximum = 0;
+﻿int borneMaximum = 0;
 string saisie = string.Empty;
 do
 {
@@ -25,10 +22,9 @@ if (int.TryParse(Console.ReadLine(), out int difficulte))
     };
 }
 
-var random = new Random();
-var nombre = random.Next(0, borneMaximum + 1);
+var nombre = Random.Shared.Next(0, borneMaximum + 1);
 bool? etatJeu = null;
-List<int> tentatives = new List<int>();
+List<int> tentatives = new List<int>(nbEssais);
 while (!etatJeu.HasValue)
 {
     Console.Clear();
