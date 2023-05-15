@@ -8,7 +8,7 @@ do
     {
         Environment.Exit(0);
     }
-} while (!int.TryParse(saisie, out borneMaximum) && borneMaximum <= 0);
+} while (!int.TryParse(saisie, out borneMaximum) || borneMaximum <= 0);
 System.Console.WriteLine("Choisissez le niveau de difficulté (1 = facile, 2 = moyen, 3 = difficile)");
 int nbEssais = 5;
 if (int.TryParse(Console.ReadLine(), out int difficulte))
