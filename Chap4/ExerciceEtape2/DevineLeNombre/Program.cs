@@ -71,3 +71,9 @@ if (etatJeu.HasValue)
         System.Console.WriteLine("Perdu ! Le nombre à deviner était " + nombre);
     }
 }
+
+public class MaListe<T> 
+where T : new(), class
+{
+    
+}
