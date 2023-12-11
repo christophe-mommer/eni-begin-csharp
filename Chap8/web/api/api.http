@@ -1,0 +1,19 @@
+@api_HostAddress = http://localhost:5193
+
+GET {{api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{api_HostAddress}}/endpoint/
+Accept: application/json
+
+###
+
+POST {{api_HostAddress}}/setvalue/
+Accept: application/json
+Content-type: application/json
+
+{
+    "value":"toto"
+}
