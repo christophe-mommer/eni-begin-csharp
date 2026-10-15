@@ -6,7 +6,7 @@ public class Garage
 {
     public void FaireEntretien(Voiture voiture)
     {
-        Console.WriteLine("Réalisation de l'entretien de la voiture de marque" + voiture.Marque);
+        Console.WriteLine("Réalisation de l'entretien de la voiture de marque " + voiture.Marque);
         voiture.DateEntretien = DateOnly.FromDateTime(DateTime.Today);
     }
     public void Repeindre(Voiture voiture, Couleur nouvelleCouleur)
