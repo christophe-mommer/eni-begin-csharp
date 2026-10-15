@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ASPNetRazorPages/bin/Debug/net8.0/ASPNetRazorPages.dll",
+            "program": "${workspaceFolder}/ASPNetRazorPages/bin/Debug/net10.0/ASPNetRazorPages.dll",
             "args": [],
             "cwd": "${workspaceFolder}/ASPNetRazorPages",
             "stopAtEntry": false,

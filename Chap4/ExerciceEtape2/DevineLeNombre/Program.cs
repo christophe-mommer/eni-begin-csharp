@@ -1,5 +1,5 @@
 ﻿int borneMaximum = 0;
-string saisie = string.Empty;
+string? saisie = string.Empty;
 do
 {
     Console.WriteLine("Saisissez la borne maximum du chiffre à deviner");
@@ -9,7 +9,7 @@ do
         Environment.Exit(0);
     }
 } while (!int.TryParse(saisie, out borneMaximum) || borneMaximum <= 0);
-System.Console.WriteLine("Choisissez le niveau de difficulté (1 = facile, 2 = moyen, 3 = difficile)");
+Console.WriteLine("Choisissez le niveau de difficulté (1 = facile, 2 = moyen, 3 = difficile)");
 int nbEssais = 5;
 if (int.TryParse(Console.ReadLine(), out int difficulte))
 {
@@ -57,23 +57,17 @@ while (!etatJeu.HasValue)
             break;
         }
     }
-    System.Console.WriteLine("Appuyer sur Entrée pour continuer");
+    Console.WriteLine("Appuyer sur Entrée pour continuer");
     Console.ReadLine();
 }
 if (etatJeu.HasValue)
 {
     if (etatJeu.Value)
     {
-        System.Console.WriteLine("Gagné !");
+        Console.WriteLine("Gagné !");
     }
     else
     {
-        System.Console.WriteLine("Perdu ! Le nombre à deviner était " + nombre);
+        Console.WriteLine("Perdu ! Le nombre à deviner était " + nombre);
     }
-}
-
-public class MaListe<T> 
-where T : new(), class
-{
-    
 }

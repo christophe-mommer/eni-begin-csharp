@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/net5.0/Exercice.dll",
+            "program": "${workspaceFolder}/bin/Debug/net10.0/Exercice.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",

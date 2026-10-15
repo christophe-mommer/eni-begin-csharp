@@ -12,8 +12,11 @@
         {  
             while (true)  
             {  
-                await InvokeAsync(() => _date = DateTime.Now);  
-                StateHasChanged();  
+                await InvokeAsync(() =>
+                {
+                    _date = DateTime.Now;
+                    StateHasChanged();
+                });
                 await Task.Delay(1000);  
             }  
         });  

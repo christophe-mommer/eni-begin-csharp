@@ -26,7 +26,7 @@ JouerJeu(borneMaximum, nbEssais);
 
 void JouerJeu(int borneMaximum, int nbEssais)
 {
-    string saisie = "";
+    string? saisie = "";
     var random = new Random();
     var nombre = random.Next(0, borneMaximum + 1);
     bool? etatJeu = null;
@@ -82,24 +82,21 @@ void JouerJeu(int borneMaximum, int nbEssais)
 
 void VerifierScorePourPalmares(int borneMaximum, int nbEssais, int tentatives)
 {
-    var playerScore = borneMaximum + ((nbEssais - tentatives) ^ difficulte);
+    var playerScore = borneMaximum + (int)Math.Pow(nbEssais - tentatives, difficulte);
     if (scores.Count == 0)
     {
         AddPlayerScore(playerScore);
     }
     else if (scores.Count == 5)
     {
-        if (scores.Min(s => s.Score < playerScore))
+        if (scores.Min(s => s.Score) < playerScore)
         {
             AddPlayerScore(playerScore);
         }
     }
     else
     {
-        if (scores.Min(s => s.Score <= playerScore))
-        {
-            AddPlayerScore(playerScore);
-        }
+        AddPlayerScore(playerScore);
     }
     int position = 1;
     foreach (var score in scores.OrderByDescending(s => s.Score))
@@ -107,13 +104,13 @@ void VerifierScorePourPalmares(int borneMaximum, int nbEssais, int tentatives)
         score.Position = position;
         position++;
     }
-    File.WriteAllText("scores.json", JsonSerializer.Serialize(scores.Take(5)));
+    File.WriteAllText("scores.json", JsonSerializer.Serialize(scores.OrderBy(s => s.Position).Take(5)));
 }
 
 void AddPlayerScore(int playerScore)
 {
     Console.WriteLine("Saisissez votre nom pour être inscrit au tableau");
-    string playerName = Console.ReadLine();
+    string? playerName = Console.ReadLine();
     var score = new PlayerScore
     {
         PlayerName = playerName,
@@ -125,7 +122,7 @@ void AddPlayerScore(int playerScore)
 int ObtenirBorneMaximum()
 {
     int borneMaximum = 0;
-    string saisie = string.Empty;
+    string? saisie = string.Empty;
     do
     {
         Console.WriteLine("Saisir la borne maximum du chiffre à deviner");
@@ -134,7 +131,7 @@ int ObtenirBorneMaximum()
         {
             Environment.Exit(0);
         }
-    } while (!int.TryParse(saisie, out borneMaximum) && borneMaximum <= 0);
+    } while (!int.TryParse(saisie, out borneMaximum) || borneMaximum <= 0);
     return borneMaximum;
 }
 
@@ -148,8 +145,8 @@ void AfficherMeilleursScores()
     }
     if (!string.IsNullOrWhiteSpace(json))
     {
-        scores = JsonSerializer.Deserialize<List<PlayerScore>>(json);
-        System.Console.WriteLine("Tableaux des meilleurs joueurs");
+        scores = JsonSerializer.Deserialize<List<PlayerScore>>(json) ?? new List<PlayerScore>();
+        System.Console.WriteLine("Tableau des meilleurs joueurs");
         foreach (var score in scores.OrderBy(s => s.Position))
         {
             System.Console.WriteLine(score.Position + " - " + score.PlayerName + " : " + score.Score);

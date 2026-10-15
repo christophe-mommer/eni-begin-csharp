@@ -1,19 +1,15 @@
-using Microsoft.AspNetCore.Mvc;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
@@ -42,8 +38,7 @@ app.MapGet("/weatherforecast", () =>
         .ToArray();
     return forecast;
 })
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+.WithName("GetWeatherForecast");
 
 app.Run();
 
@@ -55,11 +50,11 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 // La classe statique partagée entre les différents endpoints
 public static class Data
 {
-    public static string Value {get; set;} = "data";
+    public static string Value { get; set; } = "data";
 }
 
 // Le DTO pour récupérer les informations du corps de la requête POST
 public class PostBody
 {
-    public string Value {get;set;}
+    public required string Value { get; set; }
 }

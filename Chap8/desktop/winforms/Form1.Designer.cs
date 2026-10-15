@@ -1,73 +1,70 @@
-﻿namespace DesktopWinForms
+﻿namespace DesktopWinForms;
+
+partial class Form1
 {
-    partial class Form1
+    /// <summary>
+    ///  Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    ///  Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        if (disposing && (components != null))
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            components.Dispose();
         }
-
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(207, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cliquer ici";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
-            this.label1.TabIndex = 1;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Ma première fenêtre WinForms";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
-
-        #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        base.Dispose(disposing);
     }
-}
 
+    #region Windows Form Designer generated code
+
+    /// <summary>
+    ///  Required method for Designer support - do not modify
+    ///  the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+        button1 = new Button();
+        label1 = new Label();
+        SuspendLayout();
+        //
+        // button1
+        //
+        button1.Location = new Point(207, 104);
+        button1.Name = "button1";
+        button1.Size = new Size(94, 29);
+        button1.TabIndex = 0;
+        button1.Text = "Cliquer ici";
+        button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
+        //
+        // label1
+        //
+        label1.AutoSize = true;
+        label1.Location = new Point(307, 108);
+        label1.Name = "label1";
+        label1.Size = new Size(0, 20);
+        label1.TabIndex = 1;
+        //
+        // Form1
+        //
+        AutoScaleDimensions = new SizeF(8F, 20F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(800, 450);
+        Controls.Add(label1);
+        Controls.Add(button1);
+        Name = "Form1";
+        Text = "Ma première fenêtre WinForms";
+        ResumeLayout(false);
+        PerformLayout();
+    }
+
+    #endregion
+
+    private Button button1;
+    private Label label1;
+}
