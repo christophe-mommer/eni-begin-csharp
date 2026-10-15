@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ASPNET_MVC/bin/Debug/net8.0/ASPNET_MVC.dll",
+            "program": "${workspaceFolder}/ASPNET_MVC/bin/Debug/net10.0/ASPNET_MVC.dll",
             "args": [],
             "cwd": "${workspaceFolder}/ASPNET_MVC",
             "stopAtEntry": false,

@@ -7,9 +7,9 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	private async void OnButtonClicked(object sender, EventArgs e)
+	private async void OnButtonClicked(object? sender, EventArgs e)
 	{
 		label1.Text = "Dernière fois que le bouton a été cliqué : " + DateTime.Now;
-		await DisplayAlert("Information", "Vous avez cliqué sur le bouton", "OK");
+		await DisplayAlertAsync("Information", "Vous avez cliqué sur le bouton", "OK");
 	}
 }
